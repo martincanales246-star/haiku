@@ -9,7 +9,7 @@ body {
 	color: whitesmoke;
 	font-size: 5rem;
 	overflow: hidden;
-	background-image: url(../img/flames.gif);
+	background-image: url(../img/artemis_slideshows.gif);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -17,13 +17,35 @@ body {
 
 .grid-container {
 	display: grid;
-	/* grid-template-columns: 1fr 1fr 1fr; */
+	grid-template-columns: 1fr 1fr 1fr; 
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	gap: 2rem;
 	margin: 10% 4rem 0 4rem;
 }
 
-.last {
-	padding-bottom: 2rem;
-	border-bottom: 2px solid rgb(220, 200, 180);
+div {
+	transition-property: transform;
+	transition-duration: 3s;
+}
+
+.last:hover {
+	animation-name: growAndGlow;
+	animation-duration: 5s;
+}
+
+@keyframes growAndGlow {
+	from{
+		color: whitesmoke;
+	}
+
+	50% {
+		color: dodgerblue;
+		transform: skewX(10deg);
+	}
+
+	to {
+		transform: scale(2);
+		color: lightskyblue;
+	}
+
 }
